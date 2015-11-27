@@ -6,6 +6,10 @@ group :test do
   gem 'shoulda'
   gem 'rspec-collection_matchers'
 end
+gem 'omniauth-facebook'
+# for 3rd party authentication
+
+gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use postgresql as the database for Active Record

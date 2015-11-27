@@ -10,6 +10,7 @@
           <% restaurant.reviews.each do |review| %>
             Thoughts on <%= restaurant.name %>: <%= review.thoughts %> <br>
             <b>Rating on <%= restaurant.name %>: <%= review.rating %> </b><br> <br>
+            <%= link_to "Delete this review", restaurant_review_path(restaurant, review), method: :delete %>
           <% end %>
         <% else %>
           No reviews for <%= restaurant.name %> <br> <br>

@@ -30,6 +30,18 @@ ActiveRecord::Migration.maintain_test_schema!
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
+  OmniAuth.config.test_mode = true
+
+  OmniAuth.config.mock_auth[:facebook] = OmniAuth::AuthHash.new({
+      :provider => 'facebook',
+      :uid => '123545',
+      :email => 'test@test.com',
+      :password => '876543210',
+      :name => 'testtest',
+      :image => 'this_is_a_jpeg.jpg'
+      # etc.
+    })
+
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
