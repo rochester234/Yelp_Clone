@@ -6,6 +6,8 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'spec_helper'
 require 'rspec/rails'
 require 'capybara/rails'
+
+
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -41,6 +43,14 @@ RSpec.configure do |config|
       :image => 'this_is_a_jpeg.jpg'
       # etc.
     })
+
+    def signUp
+      visit('/users/sign_up')
+      fill_in('Email', with: 'test@test.com')
+      fill_in('Password', with: 'Password')
+      fill_in('Password confirmation', with: 'Password')
+      click_button('Sign up')
+    end
 
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your

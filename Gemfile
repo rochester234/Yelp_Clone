@@ -7,6 +7,7 @@ group :test do
   gem 'rspec-collection_matchers'
 end
 gem 'omniauth-facebook'
+gem 'twitter-bootstrap-rails'
 # for 3rd party authentication
 
 gem 'devise'
